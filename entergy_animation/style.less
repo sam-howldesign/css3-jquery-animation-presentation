@@ -1,0 +1,338 @@
+@red: #ee3a43;
+@screen-width: 1000;//The screen size at which the images will be 100%
+
+// Key Frames at the top to make it work in IE10/11
+@-webkit-keyframes rotateonce {100% {-webkit-transform: rotate(360deg);}}
+@keyframes rotateonce {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
+
+@-webkit-keyframes rotatep4ac {100% {-webkit-transform: rotate(690deg);}}
+@keyframes rotatep4ac {100% {-webkit-transform: rotate(690deg);transform:rotate(690deg);}}
+
+@-webkit-keyframes rotatep4 {100% {-webkit-transform: rotate(520deg);}}
+@keyframes rotatep4 {100% {-webkit-transform: rotate(520deg);transform:rotate(520deg);}}
+
+@-webkit-keyframes rotatep5 {100% {-webkit-transform: rotate(620deg);}}
+@keyframes rotatep5 {100% {-webkit-transform: rotate(620deg);transform:rotate(620deg);}}
+
+@-webkit-keyframes rotatep16 {100% {-webkit-transform: rotate(660deg);}}
+@keyframes rotatep16 {100% {-webkit-transform: rotate(660deg);transform:rotate(660deg);}}
+
+@-webkit-keyframes rotatep22 {100% {-webkit-transform: rotate(570deg);}}
+@keyframes rotatep22 {100% {-webkit-transform: rotate(570deg);transform:rotate(570deg);}}
+
+@-webkit-keyframes rotatep49 {100% {-webkit-transform: rotate(440deg);}}
+@keyframes rotatep49 {100% {-webkit-transform: rotate(440deg);transform:rotate(440deg);}}
+
+.vwizer(@property, @pixel-width){
+    @{property}: (@pixel-width / ((@screen-width * 0.01) * 1px)) * 1vw; 
+}
+
+.resizeFor1200(@property, @pixel-width){
+    @{property}: (@pixel-width * 1.2) * 1px; 
+}
+#animated-circle-container {
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    #animated-circle-container {
+        display: block;
+        width: 80%;
+        position: relative;
+        margin: 0 auto;
+    }
+    #animated-circle-container .circle-graphic {
+        position: absolute;
+        .vwizer(top, 100px);
+        left: 50%;
+        .vwizer(width, 284px);
+        .vwizer(margin-left, -142px);
+        -webkit-animation: rotateonce 500ms ease 1 normal both;
+        animation: rotateonce 500ms ease 1 normal both;
+        &.p4ac {
+            -webkit-animation: rotatep4ac 500ms ease 1 normal both;
+            animation: rotatep4ac 500ms ease 1 normal both;
+        }
+        &.p4 {
+            -webkit-animation: rotatep4 500ms ease 1 normal both;
+            animation: rotatep4 500ms ease 1 normal both;
+        }
+        &.p5 {
+            -webkit-animation: rotatep5 500ms ease 1 normal both;
+            animation: rotatep5 500ms ease 1 normal both;
+        }
+        &.p16 {
+            -webkit-animation: rotatep16 500ms ease 1 normal both;
+            animation: rotatep16 500ms ease 1 normal both;
+        }
+        &.p22 {
+            -webkit-animation: rotatep22 500ms ease 1 normal both;
+            animation: rotatep22 500ms ease 1 normal both;
+        }
+        &.p49 {
+            -webkit-animation: rotatep49 500ms ease 1 normal both;
+            animation: rotatep49 500ms ease 1 normal both;
+        }
+    }
+
+    #animated-circle-container .line,
+    #animated-circle-container .percentage{
+        position: absolute;
+        opacity: 0;
+        left: 50%;
+        cursor: auto;
+        &.showing{
+            opacity: 1;
+            cursor: pointer;
+            &.at-top {
+                cursor: auto;
+            }
+        }
+    }
+    #animated-circle-container #reset-circle {
+        color: @red;
+        display: block;
+        cursor: pointer;
+        border: 2px solid @red;
+        position: absolute;
+        .vwizer(top, 400px);
+        .vwizer(width, 85px);
+        .vwizer(margin-left, -55px);
+        text-align: center;
+        left: 50%;
+        padding: 8px 16px;
+        display: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #animated-circle-container .center-text {
+        position: absolute;
+        left: 50%;
+        .vwizer(top, 190px);
+        .vwizer(width, 78px);
+        .vwizer(margin-left, -41px);
+    }
+
+    #animated-circle-container .line.p4ac {
+        .vwizer(top, 122px);
+        .vwizer(width, 177px);
+        .vwizer(margin-left, -115px);
+    }
+    #animated-circle-container .percentage.p4ac {
+        .vwizer(top, 101px);
+        .vwizer(width, 94px);
+        .vwizer(margin-left, -215px);
+    }
+    #animated-circle-container .line.p4 {
+        .vwizer(top, 342px);
+        .vwizer(width, 85px);
+        .vwizer(margin-left, -118px);
+    }
+    #animated-circle-container .percentage.p4dr {
+        .vwizer(top, 325px);
+        .vwizer(width, 138px);
+        .vwizer(margin-left, -263px);
+    }
+
+    #animated-circle-container .line.p5 {
+        .vwizer(top, 229px);
+        .vwizer(width, 60px);
+        .vwizer(margin-left, 100px);
+    }
+    #animated-circle-container .percentage.p5e {
+        .vwizer(top, 209px);
+        .vwizer(width, 137px);
+        .vwizer(margin-left, 169px);
+    }
+
+    #animated-circle-container .line.p16 {
+        .vwizer(top, 129px);
+        .vwizer(width, 48px);
+        .vwizer(margin-left, 100px);
+    }
+    #animated-circle-container .percentage.p16ci {
+        .vwizer(top, 108px);
+        .vwizer(width, 127px);
+        .vwizer(margin-left, 158px);
+    }
+
+    #animated-circle-container .line.p22 {
+        .vwizer(top, 337px);
+        .vwizer(width, 114px);
+        .vwizer(margin-left, 52px);
+    }
+    #animated-circle-container .percentage.p22ci {
+        .vwizer(top, 318px);
+        .vwizer(width, 105px);
+        .vwizer(margin-left, 173px);
+    }
+    #animated-circle-container .line.p49 {
+        .vwizer(top, 225px);
+        .vwizer(width, 48px);
+        .vwizer(margin-left, -158px);
+    }
+    #animated-circle-container .percentage.p49ewd {
+        .vwizer(top, 209px);
+        .vwizer(width, 128px);
+        .vwizer(margin-left, -294px);
+    }
+    #animated-circle-container .percentage.at-top {
+        top: 38px !important;
+        margin-left: 0 !important;
+    }
+
+    #red-circle {
+        opacity: 0;
+        &.showing{
+            opacity: 1;
+        }
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        background-color: @red;
+        border-radius: 300px;
+        .vwizer(padding, 35px);
+        .vwizer(top, 111px);
+        .vwizer(width, 190px);
+        .vwizer(height, 190px);
+        .vwizer(margin-left, -130px);
+    }
+    #red-circle .red-text {
+        display: none;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+        color: white;
+        padding: 5% 0;
+        font-size: 11.75px;
+    }
+
+}
+
+@media (min-width: 850px) {
+    #red-circle .red-text {
+        font-size: 13px;
+    }
+}
+@media (min-width: 920px) {
+    #red-circle .red-text {
+        font-size: 14px;
+    }
+}
+@media (min-width: 1024px) {
+    #red-circle .red-text {
+        font-size: 15px;
+    }
+}
+@media (min-width: 1044px) {
+    #red-circle .red-text {
+        font-size: 16px;
+    }
+}
+@media (min-width: 1140px) {
+    #red-circle .red-text {
+        font-size: 17px;
+    }
+}
+@media (min-width: 1200px) {
+    #red-circle .red-text {
+        font-size: 18px;
+        &.p22 {
+            padding-top: 0;
+        }
+    }
+    #animated-circle-container {
+        width: 960px;
+    }
+
+    #animated-circle-container .circle-graphic {
+        .resizeFor1200(top, 100px);
+        .resizeFor1200(width, 284px);
+        .resizeFor1200(margin-left, -142px);
+    }
+
+    #animated-circle-container #reset-circle {
+        .resizeFor1200(top, 400px);
+        .resizeFor1200(width, 85px);
+        .resizeFor1200(margin-left, -55px);
+    }
+
+    #animated-circle-container .center-text {
+        .resizeFor1200(top, 190px);
+        .resizeFor1200(width, 78px);
+        .resizeFor1200(margin-left, -41px);
+    }
+
+    #animated-circle-container .line.p4ac {
+        .resizeFor1200(top, 122px);
+        .resizeFor1200(width, 177px);
+        .resizeFor1200(margin-left, -115px);
+    }
+    #animated-circle-container .percentage.p4ac {
+        .resizeFor1200(top, 101px);
+        .resizeFor1200(width, 94px);
+        .resizeFor1200(margin-left, -215px);
+    }
+    #animated-circle-container .line.p4 {
+        .resizeFor1200(top, 342px);
+        .resizeFor1200(width, 85px);
+        .resizeFor1200(margin-left, -118px);
+    }
+    #animated-circle-container .percentage.p4dr {
+        .resizeFor1200(top, 325px);
+        .resizeFor1200(width, 138px);
+        .resizeFor1200(margin-left, -263px);
+    }
+
+    #animated-circle-container .line.p5 {
+        .resizeFor1200(top, 229px);
+        .resizeFor1200(width, 60px);
+        .resizeFor1200(margin-left, 100px);
+    }
+    #animated-circle-container .percentage.p5e {
+        .resizeFor1200(top, 209px);
+        .resizeFor1200(width, 137px);
+        .resizeFor1200(margin-left, 169px);
+    }
+
+    #animated-circle-container .line.p16 {
+        .resizeFor1200(top, 129px);
+        .resizeFor1200(width, 48px);
+        .resizeFor1200(margin-left, 100px);
+    }
+    #animated-circle-container .percentage.p16ci {
+        .resizeFor1200(top, 108px);
+        .resizeFor1200(width, 127px);
+        .resizeFor1200(margin-left, 158px);
+    }
+
+    #animated-circle-container .line.p22 {
+        .resizeFor1200(top, 337px);
+        .resizeFor1200(width, 114px);
+        .resizeFor1200(margin-left, 52px);
+    }
+    #animated-circle-container .percentage.p22ci {
+        .resizeFor1200(top, 318px);
+        .resizeFor1200(width, 105px);
+        .resizeFor1200(margin-left, 173px);
+    }
+    #animated-circle-container .line.p49 {
+        .resizeFor1200(top, 225px);
+        .resizeFor1200(width, 48px);
+        .resizeFor1200(margin-left, -158px);
+    }
+    #animated-circle-container .percentage.p49ewd {
+        .resizeFor1200(top, 209px);
+        .resizeFor1200(width, 128px);
+        .resizeFor1200(margin-left, -294px);
+    }
+
+    #red-circle {
+        .resizeFor1200(padding, 35px);
+        .resizeFor1200(top, 111px);
+        .resizeFor1200(width, 190px);
+        .resizeFor1200(height, 190px);
+        .resizeFor1200(margin-left, -130px);
+    }
+
+}

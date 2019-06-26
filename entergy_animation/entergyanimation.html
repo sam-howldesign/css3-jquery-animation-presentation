@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Entergy Animation</title>
+        <link rel="stylesheet" type="text/css" href="animate.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css?v=2">
+        <script>
+
+            $(function(){
+                let $circleGraphic = $('.circle-graphic');
+                //a little spinny sexiness at the start
+                $circleGraphic.on('webkitAnimationEnd animationend', function(){
+                    //multi-event listeners! jQuery is awesome!
+                    popPercentages();
+                    $circleGraphic.off('webkitAnimationEnd animationend');
+                });
+
+                //listen for clicks
+                $(".percentage").click(function(){
+                    //save the clicked percentage object
+                    var $clickedPercentage = $(this);
+                    if ($clickedPercentage.is(':not(.showing)') ){
+                        //don't do anything if this element is not showing
+                        return;
+                    }
+                    if ($clickedPercentage.is('.at-top') ){
+                        //don't do anything if this element is being featured
+                        return;
+                    }
+
+                    //hide lines and percentages
+                    $(".line , .percentage").removeClass('showing');
+                    
+                    //change position of percentage to be at the top
+                    $clickedPercentage.addClass('at-top');
+
+                    //spin once plus the amount listed as angle
+                    var infoClass = $clickedPercentage.attr('data-text');
+                    $circleGraphic.addClass(infoClass);
+                    $circleGraphic.on('webkitAnimationEnd animationend', function(){
+                        $circleGraphic.off('webkitAnimationEnd animationend');
+                    });    
+                    animateNowCSS($clickedPercentage, 'bounceIn');
+                    
+                    var $redCircle = $("#red-circle");
+                    
+                    //on finish growing, show text
+                    animateNowCSS($redCircle, 'zoomIn', function(){ $(".red-text."+infoClass).show(); });
+
+                    $("#reset-circle").show();
+                    $("#reset-circle").click(function(){
+                        $(".red-text."+infoClass).hide();
+
+                        //change position of percentage to not be at the top
+                        $clickedPercentage.removeClass('showing at-top');
+
+                        //zoom out the red circle
+                        animateNowCSS($redCircle, 'zoomOut',function(){ $redCircle.removeClass('showing');});
+                        $circleGraphic.removeClass(infoClass);
+                        $circleGraphic.on('webkitAnimationEnd animationend', function(){
+                            popPercentages();
+                            $circleGraphic.off('webkitAnimationEnd animationend');
+                        });
+
+                        $("#reset-circle").hide();
+                        $("#reset-circle").off('click');
+                    });
+                    
+                });
+                
+            });
+
+            /**
+             * Shows reveals the percentage images with random delays
+             */
+            function popPercentages(){
+                //show all lines
+                $(".line").addClass('showing');
+                
+                //foreach percentage
+                $(".percentage").each(function(i){
+                    //make a random number of milliseconds between 0 and 1/2 a second
+                    var randomDelay = Math.floor((Math.random() * 500) );
+                    //bounce this percentage in after that delay
+                    animateCSS($(this), 'bounceIn', randomDelay );
+                });
+            }
+
+            /**
+             * Wraps the animateNowCSS method and sets a delay based on parameters
+             * @param {jQuery Object} $element - the element to animate
+             * @param {string} animationName - the name of the animation 
+             * @param {number} delay - the number of milliseconds to wait
+             * @param {function} callback - a callback function to be called when complete
+             */
+            function animateCSS($element, animationName, delay, callback) {
+                //if there is a delay then set a timeout for that length of time
+                if (delay > 0){
+                    setTimeout(function() {
+                        animateNowCSS($element, animationName, callback);
+                    }, delay);
+                }else {
+                    //if there is not a delay then just run it now
+                    animateNowCSS($element, animationName, callback);
+                }
+            }
+
+            /**
+             * Changes classes to kick off CSS3 animations
+             * @param {jQuery Object} $element - the element to animate
+             * @param {string} animationName - the name of the animation 
+             * @param {function} callback - a callback function to be called when complete
+             */
+             function animateNowCSS($element, animationName, callback) {
+
+                /**
+                 * cleans up the animation classes when the animation completes
+                 * also calls the callback if any was specified
+                 */
+                function handleAnimationEnd() {
+                    $element.removeClass('animated ' + animationName);
+                    $element.off('animationend');
+
+                    if (typeof callback === 'function') callback()
+                }
+
+                //when the animation is completed do some cleanup
+                $element.on('animationend', handleAnimationEnd);
+
+                //make sure the element is showing, then tell it to be animated and which animation to use
+                $element.addClass('showing animated ' + animationName);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="animated-circle-container">
+            <img class="center-text" src="images/centertext.png" alt="Middle Text"/>
+
+            <img class="circle-graphic" src="images/circlelayer.png" alt="circle graphic"/>
+            
+            <!-- 284 x 283 -->
+            <img class="line p4ac " data-degree="330" src="images/4p_AC_line.png" alt="4 percent arts and culture"/>
+            <img class="percentage p4ac" data-degree="330" data-text="p4ac" src="images/4p_AC.png" alt="4 percent arts and culture"/>
+            
+            <img class="line p4 " data-degree="160" src="images/4p_line.png" alt="4 percent disaster relief"/>
+            <img class="percentage p4dr" data-degree="160" data-text="p4" src="images/4p_DR.png" alt="4 percent disaster relief"/>
+            
+            <img class="line p5 " data-degree="260" src="images/5p_line.png" alt="5 percent environmental"/>
+            <img class="percentage p5e" data-degree="260" data-text="p5" src="images/5p_E.png" alt="5 percent environmental"/>
+
+            <img class="line p16 " data-degree="300" src="images/16p_line.png" alt="16 percent community improvement"/>
+            <img class="percentage p16ci" data-degree="300" data-text="p16" src="images/16p_CI.png" alt="16 percent community improvement"/>
+            
+            <img class="line p22 " data-degree="210" src="images/22p_line.png" alt="22 percent poverty solutions"/>
+            <img class="percentage p22ci" data-degree="210" data-text="p22" src="images/22p_PS.png" alt="22 percent poverty solutions"/>
+
+            <img class="line p49 " data-degree="80" src="images/49p_line.png" alt="49 percent education and workforce development"/>
+            <img class="percentage p49ewd" data-degree="90" data-text="p49" src="images/49p_EWD.png" alt="49 percent education and workforce development"/>
+
+            <div id="reset-circle">
+                See all areas
+            </div>
+
+            <div id="red-circle">
+                <div class="red-text p4ac" >
+                    The arts and culture have the power to bring us together through shared experiences. We're proud to support initiatives that encourage creativity, feed imaginations and color our world.
+                </div>
+                <div class="red-text p4" >
+                    Helping our communities return to normalcy following a disaster is important to us. We not only work to keep the lights on and the gas flowing but also offer a helping hand in times of need.
+                </div>                
+                <div class="red-text p5" >
+                    Louisiana is our home too, so we're reducing emissions and delivering cleaner, more efficient power. And whether it's donating supplies to build artificial reefs for marine life or supporting beautification and cleanup efforts, we're dedicated to being good stewards of the environment.
+                </div>                
+                <div class="red-text p16" >
+                    We go beyond the power grid to support the communities we serve. From improving public safety to supporting local youth organizations, we're an active participant in making Louisiana a better place to live and work.
+                </div>                
+                <div class="red-text p22" >
+                    Giving back and volunteerism are at the cornerstone of our mission. By volunteering at local food pantries and supporting emergency bill assistance programs like The Power to Care, we help improve quality of life in our communities. It's part of who we are and have always been.
+                </div>                
+                <div class="red-text p49" >
+                    Education and workforce development are critical in building and maintaining vibrant, healthy and sustainable communities. From partnering with nonprofits to investing in schools and universities, we're committed to creating opportunities for all Louisianans.
+                </div>                
+            </div>
+        </div>
+    </body>
+</html>

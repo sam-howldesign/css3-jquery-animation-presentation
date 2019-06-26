@@ -1,0 +1,365 @@
+@-webkit-keyframes rotateonce {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotateonce {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotatep4ac {
+  100% {
+    -webkit-transform: rotate(690deg);
+  }
+}
+@keyframes rotatep4ac {
+  100% {
+    -webkit-transform: rotate(690deg);
+    transform: rotate(690deg);
+  }
+}
+@-webkit-keyframes rotatep4 {
+  100% {
+    -webkit-transform: rotate(520deg);
+  }
+}
+@keyframes rotatep4 {
+  100% {
+    -webkit-transform: rotate(520deg);
+    transform: rotate(520deg);
+  }
+}
+@-webkit-keyframes rotatep5 {
+  100% {
+    -webkit-transform: rotate(620deg);
+  }
+}
+@keyframes rotatep5 {
+  100% {
+    -webkit-transform: rotate(620deg);
+    transform: rotate(620deg);
+  }
+}
+@-webkit-keyframes rotatep16 {
+  100% {
+    -webkit-transform: rotate(660deg);
+  }
+}
+@keyframes rotatep16 {
+  100% {
+    -webkit-transform: rotate(660deg);
+    transform: rotate(660deg);
+  }
+}
+@-webkit-keyframes rotatep22 {
+  100% {
+    -webkit-transform: rotate(570deg);
+  }
+}
+@keyframes rotatep22 {
+  100% {
+    -webkit-transform: rotate(570deg);
+    transform: rotate(570deg);
+  }
+}
+@-webkit-keyframes rotatep49 {
+  100% {
+    -webkit-transform: rotate(440deg);
+  }
+}
+@keyframes rotatep49 {
+  100% {
+    -webkit-transform: rotate(440deg);
+    transform: rotate(440deg);
+  }
+}
+#animated-circle-container {
+  display: none;
+}
+@media (min-width: 768px) {
+  #animated-circle-container {
+    display: block;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+  }
+  #animated-circle-container .circle-graphic {
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    width: 28.4vw;
+    margin-left: -14.2vw;
+    -webkit-animation: rotateonce 500ms ease 1 normal both;
+    animation: rotateonce 500ms ease 1 normal both;
+  }
+  #animated-circle-container .circle-graphic.p4ac {
+    -webkit-animation: rotatep4ac 500ms ease 1 normal both;
+    animation: rotatep4ac 500ms ease 1 normal both;
+  }
+  #animated-circle-container .circle-graphic.p4 {
+    -webkit-animation: rotatep4 500ms ease 1 normal both;
+    animation: rotatep4 500ms ease 1 normal both;
+  }
+  #animated-circle-container .circle-graphic.p5 {
+    -webkit-animation: rotatep5 500ms ease 1 normal both;
+    animation: rotatep5 500ms ease 1 normal both;
+  }
+  #animated-circle-container .circle-graphic.p16 {
+    -webkit-animation: rotatep16 500ms ease 1 normal both;
+    animation: rotatep16 500ms ease 1 normal both;
+  }
+  #animated-circle-container .circle-graphic.p22 {
+    -webkit-animation: rotatep22 500ms ease 1 normal both;
+    animation: rotatep22 500ms ease 1 normal both;
+  }
+  #animated-circle-container .circle-graphic.p49 {
+    -webkit-animation: rotatep49 500ms ease 1 normal both;
+    animation: rotatep49 500ms ease 1 normal both;
+  }
+  #animated-circle-container .line,
+  #animated-circle-container .percentage {
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    cursor: auto;
+  }
+  #animated-circle-container .line.showing,
+  #animated-circle-container .percentage.showing {
+    opacity: 1;
+    cursor: pointer;
+  }
+  #animated-circle-container .line.showing.at-top,
+  #animated-circle-container .percentage.showing.at-top {
+    cursor: auto;
+  }
+  #animated-circle-container #reset-circle {
+    color: #ee3a43;
+    display: block;
+    cursor: pointer;
+    border: 2px solid #ee3a43;
+    position: absolute;
+    top: 40vw;
+    width: 8.5vw;
+    margin-left: -5.5vw;
+    text-align: center;
+    left: 50%;
+    padding: 8px 16px;
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #animated-circle-container .center-text {
+    position: absolute;
+    left: 50%;
+    top: 19vw;
+    width: 7.8vw;
+    margin-left: -4.1vw;
+  }
+  #animated-circle-container .line.p4ac {
+    top: 12.2vw;
+    width: 17.7vw;
+    margin-left: -11.5vw;
+  }
+  #animated-circle-container .percentage.p4ac {
+    top: 10.1vw;
+    width: 9.4vw;
+    margin-left: -21.5vw;
+  }
+  #animated-circle-container .line.p4 {
+    top: 34.2vw;
+    width: 8.5vw;
+    margin-left: -11.8vw;
+  }
+  #animated-circle-container .percentage.p4dr {
+    top: 32.5vw;
+    width: 13.8vw;
+    margin-left: -26.3vw;
+  }
+  #animated-circle-container .line.p5 {
+    top: 22.9vw;
+    width: 6vw;
+    margin-left: 10vw;
+  }
+  #animated-circle-container .percentage.p5e {
+    top: 20.9vw;
+    width: 13.7vw;
+    margin-left: 16.9vw;
+  }
+  #animated-circle-container .line.p16 {
+    top: 12.9vw;
+    width: 4.8vw;
+    margin-left: 10vw;
+  }
+  #animated-circle-container .percentage.p16ci {
+    top: 10.8vw;
+    width: 12.7vw;
+    margin-left: 15.8vw;
+  }
+  #animated-circle-container .line.p22 {
+    top: 33.7vw;
+    width: 11.4vw;
+    margin-left: 5.2vw;
+  }
+  #animated-circle-container .percentage.p22ci {
+    top: 31.8vw;
+    width: 10.5vw;
+    margin-left: 17.3vw;
+  }
+  #animated-circle-container .line.p49 {
+    top: 22.5vw;
+    width: 4.8vw;
+    margin-left: -15.8vw;
+  }
+  #animated-circle-container .percentage.p49ewd {
+    top: 20.9vw;
+    width: 12.8vw;
+    margin-left: -29.4vw;
+  }
+  #animated-circle-container .percentage.at-top {
+    top: 38px !important;
+    margin-left: 0 !important;
+  }
+  #red-circle {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    background-color: #ee3a43;
+    border-radius: 300px;
+    padding: 3.5vw;
+    top: 11.1vw;
+    width: 19vw;
+    height: 19vw;
+    margin-left: -13vw;
+  }
+  #red-circle.showing {
+    opacity: 1;
+  }
+  #red-circle .red-text {
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    color: white;
+    padding: 5% 0;
+    font-size: 11.75px;
+  }
+}
+@media (min-width: 850px) {
+  #red-circle .red-text {
+    font-size: 13px;
+  }
+}
+@media (min-width: 920px) {
+  #red-circle .red-text {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  #red-circle .red-text {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1044px) {
+  #red-circle .red-text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1140px) {
+  #red-circle .red-text {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1200px) {
+  #red-circle .red-text {
+    font-size: 18px;
+  }
+  #red-circle .red-text.p22 {
+    padding-top: 0;
+  }
+  #animated-circle-container {
+    width: 960px;
+  }
+  #animated-circle-container .circle-graphic {
+    top: 120px;
+    width: 340.8px;
+    margin-left: -170.4px;
+  }
+  #animated-circle-container #reset-circle {
+    top: 480px;
+    width: 102px;
+    margin-left: -66px;
+  }
+  #animated-circle-container .center-text {
+    top: 228px;
+    width: 93.6px;
+    margin-left: -49.2px;
+  }
+  #animated-circle-container .line.p4ac {
+    top: 146.4px;
+    width: 212.4px;
+    margin-left: -138px;
+  }
+  #animated-circle-container .percentage.p4ac {
+    top: 121.2px;
+    width: 112.8px;
+    margin-left: -258px;
+  }
+  #animated-circle-container .line.p4 {
+    top: 410.4px;
+    width: 102px;
+    margin-left: -141.6px;
+  }
+  #animated-circle-container .percentage.p4dr {
+    top: 390px;
+    width: 165.6px;
+    margin-left: -315.6px;
+  }
+  #animated-circle-container .line.p5 {
+    top: 274.8px;
+    width: 72px;
+    margin-left: 120px;
+  }
+  #animated-circle-container .percentage.p5e {
+    top: 250.8px;
+    width: 164.4px;
+    margin-left: 202.8px;
+  }
+  #animated-circle-container .line.p16 {
+    top: 154.8px;
+    width: 57.6px;
+    margin-left: 120px;
+  }
+  #animated-circle-container .percentage.p16ci {
+    top: 129.6px;
+    width: 152.4px;
+    margin-left: 189.6px;
+  }
+  #animated-circle-container .line.p22 {
+    top: 404.4px;
+    width: 136.8px;
+    margin-left: 62.4px;
+  }
+  #animated-circle-container .percentage.p22ci {
+    top: 381.6px;
+    width: 126px;
+    margin-left: 207.6px;
+  }
+  #animated-circle-container .line.p49 {
+    top: 270px;
+    width: 57.6px;
+    margin-left: -189.6px;
+  }
+  #animated-circle-container .percentage.p49ewd {
+    top: 250.8px;
+    width: 153.6px;
+    margin-left: -352.8px;
+  }
+  #red-circle {
+    padding: 42px;
+    top: 133.2px;
+    width: 228px;
+    height: 228px;
+    margin-left: -156px;
+  }
+}

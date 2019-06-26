@@ -1,0 +1,148 @@
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title>Bounce With Me - CSS3 and jQuery</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+        <section>
+          <h1>Bounce With Me</h1>
+          <h3>A Case Study with CSS3 and jQuery</h3>
+        </section>
+
+        <section>
+          <h3>Sam Johnson</h3>
+          <ul>
+            <li>Works at Howl Design since 2007</li>
+            <li>Previously worked for Skytel, Cytec, Itron Cellular solutions (SmartSynch), Saks</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>The Why</h3>
+          <p>Client needs to animate an image to increase engagement and presentation appeal of some statistics</p>
+          <p>Client needs it to workin IE11 because ... reasons</p>
+          <p>Needs to work between 768 and 1200 pixels</p>
+        </section>
+
+        <section>
+          <h3>Animation Ideas</h3>
+          <ul>
+            <li>Simple fade in / fade out</li>
+            <li>CSS3 animation integration</li>
+            <li>Custom buck wild anything goes</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Animation Concept</h3>
+          <p><a href="./images/entergy_animation_plan.pdf">Animation Plan</a></p>
+        </section>
+
+        <section>
+          <h3>Planning</h3>
+          <p>How about 100% jQuery?</p>
+        </section>
+
+        <section>
+          <h3>No, to slow</h3>
+          <p>Ok Lets do 100% CSS3!</p>
+        </section>
+        
+        <section>
+          <h3>Also No</h3>
+          <p>We need the additional functionality provided by javascript</p>
+        </section>
+
+        <section>
+          <h3>Do we really need jQuery?</h3>
+          <p>Not really, but maybe we don't have to question my love</p>
+        </section>
+
+        <section>
+          <h3>You got a sliced up PSD, now what?</h3>
+          <p>Photoshop right click layers, export as png</p>
+          <p>GIMP <a href="https://github.com/khalim19/gimp-plugin-export-layers">use this plugin</a></p>
+        </section>
+  
+        <section>
+          <h3>Lets talk about some HTML5</h3>
+          <p></p>
+        </section>
+
+
+        <section>
+          <h3>Less is awesome, don't Sass me.</h3>
+        </section>
+
+        <section>
+          <h3>Animations</h3>
+          <p>Other people are smarter and more capable than I am.</p>
+          <p>These are the people who's backs I trod apon in my ascent to greatness.</p>
+          <p><a href="https://daneden.github.io/animate.css/">Step Here</a></p>
+        </section>
+
+        <section>
+          <h3>Cubic Bezier and scale3d</h3>
+          <p><a href="https://cubic-bezier.com/?#.21,.61,.35,1">Cubic Bezier discussion</a></p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d">Scale3d</a></p>
+
+        </section>
+
+        <section>
+          <h3>Lets do this!</h3>
+          <ul>
+            <li>Rotate Circle</li>
+            <li>Show Lines</li>
+            <li>Pop In percentages</li>
+            <li>Listen for percentage clicks</li>            
+          </ul>
+        </section>
+
+        <section>
+          <h3>What happens when you click the percentages?</h3>
+          <ul>
+            <li>hide percentages</li>
+            <li>show back button</li> 
+            <li>move the clicked one to the top</li>
+            <li>expand and fade in red circle</li>
+            <li>when finished show white text</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Code!</h3>
+        </section>
+
+        <section>
+          <h3>Room for Improvement</h3>
+          <p>Maybe add in the top line somehow or resize some of the elements</p>
+          <p>Only include the parts of Animate.css that we are actually using</p>
+          <p>Don't use jQuery? ... Nah </p>
+        </section>
+
+        <section>
+          <h3>Questions?</h3>
+        </section>
+  
+      </div><!-- End .slides-->
+    </div><!-- End .reveal-->
+
+    <script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize();
+      Reveal.configure({ pdfMaxPagesPerSlide: 1 })
+    </script>
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </body>
+</html>
