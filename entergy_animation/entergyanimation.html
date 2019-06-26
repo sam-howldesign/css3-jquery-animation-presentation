@@ -39,19 +39,17 @@
                     //spin once plus the amount listed as angle
                     var infoClass = $clickedPercentage.attr('data-text');
                     $circleGraphic.addClass(infoClass);
-                    $circleGraphic.on('webkitAnimationEnd animationend', function(){
-                        $circleGraphic.off('webkitAnimationEnd animationend');
-                    });    
+
                     animateNowCSS($clickedPercentage, 'bounceIn');
                     
-                    var $redCircle = $("#red-circle");
+                    var $redCircle = $("#percentage-description");
                     
                     //on finish growing, show text
-                    animateNowCSS($redCircle, 'zoomIn', function(){ $(".red-text."+infoClass).show(); });
+                    animateNowCSS($redCircle, 'zoomIn', function(){ $(".percentage-description-text."+infoClass).show(); });
 
                     $("#reset-circle").show();
                     $("#reset-circle").click(function(){
-                        $(".red-text."+infoClass).hide();
+                        $(".percentage-description-text."+infoClass).hide();
 
                         //change position of percentage to not be at the top
                         $clickedPercentage.removeClass('showing at-top');
@@ -164,23 +162,23 @@
                 See all areas
             </div>
 
-            <div id="red-circle">
-                <div class="red-text p4ac" >
+            <div id="percentage-description">
+                <div class="percentage-description-text p4ac" >
                     The arts and culture have the power to bring us together through shared experiences. We're proud to support initiatives that encourage creativity, feed imaginations and color our world.
                 </div>
-                <div class="red-text p4" >
+                <div class="percentage-description-text p4" >
                     Helping our communities return to normalcy following a disaster is important to us. We not only work to keep the lights on and the gas flowing but also offer a helping hand in times of need.
                 </div>                
-                <div class="red-text p5" >
+                <div class="percentage-description-text p5" >
                     Louisiana is our home too, so we're reducing emissions and delivering cleaner, more efficient power. And whether it's donating supplies to build artificial reefs for marine life or supporting beautification and cleanup efforts, we're dedicated to being good stewards of the environment.
                 </div>                
-                <div class="red-text p16" >
+                <div class="percentage-description-text p16" >
                     We go beyond the power grid to support the communities we serve. From improving public safety to supporting local youth organizations, we're an active participant in making Louisiana a better place to live and work.
                 </div>                
-                <div class="red-text p22" >
+                <div class="percentage-description-text p22" >
                     Giving back and volunteerism are at the cornerstone of our mission. By volunteering at local food pantries and supporting emergency bill assistance programs like The Power to Care, we help improve quality of life in our communities. It's part of who we are and have always been.
                 </div>                
-                <div class="red-text p49" >
+                <div class="percentage-description-text p49" >
                     Education and workforce development are critical in building and maintaining vibrant, healthy and sustainable communities. From partnering with nonprofits to investing in schools and universities, we're committed to creating opportunities for all Louisianans.
                 </div>                
             </div>

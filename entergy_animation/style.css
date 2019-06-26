@@ -220,7 +220,7 @@
     top: 38px !important;
     margin-left: 0 !important;
   }
-  #red-circle {
+  #percentage-description {
     opacity: 0;
     position: absolute;
     left: 50%;
@@ -233,10 +233,10 @@
     height: 19vw;
     margin-left: -13vw;
   }
-  #red-circle.showing {
+  #percentage-description.showing {
     opacity: 1;
   }
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     display: none;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
@@ -246,35 +246,35 @@
   }
 }
 @media (min-width: 850px) {
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     font-size: 13px;
   }
 }
 @media (min-width: 920px) {
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     font-size: 14px;
   }
 }
 @media (min-width: 1024px) {
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     font-size: 15px;
   }
 }
 @media (min-width: 1044px) {
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     font-size: 16px;
   }
 }
 @media (min-width: 1140px) {
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     font-size: 17px;
   }
 }
 @media (min-width: 1200px) {
-  #red-circle .red-text {
+  #percentage-description .percentage-description-text {
     font-size: 18px;
   }
-  #red-circle .red-text.p22 {
+  #percentage-description .percentage-description-text.p22 {
     padding-top: 0;
   }
   #animated-circle-container {
@@ -355,7 +355,7 @@
     width: 153.6px;
     margin-left: -352.8px;
   }
-  #red-circle {
+  #percentage-description {
     padding: 42px;
     top: 133.2px;
     width: 228px;
