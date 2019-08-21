@@ -5,8 +5,4 @@ This is a presentation given at the Jackson Area Web and App Developer meetup on
 
 The completed demo is [here](entergy_animation/entergyanimation.html).
 
-<<<<<<< HEAD
-The demo uses CSS3 for the animations and jQuery as a framework for the javascript. The jQuery is not absolutely necessary but the CSS3 is vital.
-=======
 The demo uses CSS3 for the animations and jQuery as a framework for the javascript. The jQuery is not absolutely necessary but the CSS3 is rather vital.
->>>>>>> 8045456b6458ff87386f12085ed7c5cc2a0fe3e6
